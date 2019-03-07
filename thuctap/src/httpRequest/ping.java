@@ -7,7 +7,7 @@ import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
-public class ping extends TimerTask {
+public class ping implements Runnable {
 
 	private String url;
 	URL url1;
