@@ -10,22 +10,24 @@ import httpRequest.ping;
 import httpRequest.readFile;
 
 public class main extends Thread {
-	
+	private static String surl;
 	static URL url;
 	static int sttcode;
 	int sttcode2;
+	static int i;
 	
 	public static void createthread(ArrayList<String> listurl) {
-		for (String surl : listurl) {
-			ExecutorService executor = Executors.newFixedThreadPool(listurl.size());
+	ExecutorService executor = Executors.newFixedThreadPool(listurl.size());
+	for(i=0;i<listurl.size();i++) {
+		{
+			surl=listurl.get(i).toString();
+			Runnable pg =new ping(surl);
+			executor.submit(pg);
 			
-			
-			executor.submit(new ping(surl));
-			// new Thread(ping(surl)).start();
 		}
 	}
-
-	public static void main(String[] args) {
+	}
+	public static void Main(String[] args) {
 		// TODO Auto-generated method stub
 		ArrayList<String> listurl = new ArrayList<String>();
 		readFile.read(listurl);

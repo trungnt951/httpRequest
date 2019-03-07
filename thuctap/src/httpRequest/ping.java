@@ -91,7 +91,7 @@ public class ping implements Runnable {
 				tkError = hashurl.get("flag" + url);
 
 				// Kiem tra co` bao loi neu qua so lan quy dinh thong bao loi tren console va luu lai vao log
-				if (tkError >= 2) {
+				if (tkError > 2) {
 					System.out.print("\t\t\t **** ERROR ****\n");
 
 					fh = new FileHandler("/home/trung/Desktop/LogError.log", true);
