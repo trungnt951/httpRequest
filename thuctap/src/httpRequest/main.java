@@ -27,7 +27,7 @@ public class main extends Thread {
 		}
 	}
 	}
-	public static void Main(String[] args) {
+	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ArrayList<String> listurl = new ArrayList<String>();
 		readFile.read(listurl);
